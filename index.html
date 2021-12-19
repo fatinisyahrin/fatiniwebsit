@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Fatini Syahrin</title>
+</head>
+<body style="background-color:#f2f2f2;">
+	<a name="title"></a>
+	<div class="topnav" style="font-size: 7px;">
+  		  <a href="index.html" class="active">Home</a>
+  			<a href="biodata.html">Biodata</a>
+  			<a href="hobbies.html">Hobbies</a>
+  			<a href="education.html">Education</a>
+ 			  <a href="experience.html">Experience</a>
+ 			  <a href="skills.html">Skills</a>
+  			<a href="interest.html">Interest</a>
+  			<a href="family.html">Family</a>
+  			<a href="gallery.html">Gallery</a>
+	</div>
+<div class="w3-container w3-center w3-animate-opacity">
+<embed src="backgroundmusic.3gp" hidden="true"></embed>
+<br>
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <h2 id="demo" class="w3-jumbo"><span>I'm </span>Nur Fatini Aqilah.</h2>
+    <p>Welcome to My Website :)</p> 
+    <p><a href="biodata.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">More about me</a></p>
+  </div> 
+  <div class="image-box">
+  <img src="waktupresent.jpeg" alt="Fatini Syahrin" height="450px" width="450px">
+  </div>
+</header>
+
+<!-- About Section -->
+<div class="about" style="padding:128px 16px" id="about">
+  <div class="ctdown">
+<div class="container">
+  <h2 id="headline">Countdown to my birthday</h2>
+  <div id="countdown">
+    <ul>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
+    </ul>
+  </div>
+  </div>
+    <div id="content" class="emoji">
+    <span>🥳</span>
+    <span>🎉</span>
+    <span>🎂</span>
+  </div>
+</div>
+</div>
+<script type="text/javascript" src="https://www.counters-free.net/count/9yv1"></script><br>
+<a href='https://healthnewsnet.de/'></a>
+<script type='text/javascript'></script>
+<br>
+<br>
+    <div class="clock"><center>
+        <body onload="startTime()">
+        <p>Current Time</p>
+        <div id="txt"></div>
+    </div> 
+</div>
+  <br>
+<div class="callout">
+<div class="callout-header"><img src="iklan.png"></div>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+</div>
+
+<!-- Footer -->
+  <div class="footer">
+    <p>2021 by Fatini Syahrin - fatinisyahrin@gmail.com</p>
+    <a href="https://www.instagram.com/fatinisyahrin_/" target="blank">
+    <img src="instagram.png" height="15px" width="15px"></a>
+    <a href="https://twitter.com/fatinisyahrin__?lang=da" target="blank">
+    <img src="twitter.png" height="15px" width="15px"></a>
+  </div>
+<br>
+
+<!-- Scroll Up -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+<script>
+
+
+
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+
+
+//Ctdown
+  (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  //I'm adding this section so I don't have to keep updating this pen every year :-)
+  //remove this if you don't need it
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "09/22/",
+      birthday = dayMonth + yyyy;
+  
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear;
+  }
+  //end
+  
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+
+
+
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
